@@ -7,7 +7,8 @@ on:
 jobs:
   build:
     runs-on: macos-latest   # 🔥 Change from windows to mac
-
+    env:
+       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - uses: actions/checkout@v4
 
@@ -18,3 +19,4 @@ jobs:
 
       - name: Build using Maven
         run: mvn clean install
+        working-directory: cicd_maven/demo
